@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Layout, Type, Image as Img, Component } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +10,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-
-
+} from "@/components/ui/sheet";
+import Layouts from "../editor-layouts";
+import Components from "../editor-components";
 
 const LeftSideBar = () => {
   return (
@@ -24,36 +24,18 @@ const LeftSideBar = () => {
             alt="Logo"
             width={100}
             height={100}
-            
             className="w-10 h-10 bg-transparent"
           />
         </div>
-        <Button variant="ghost" size="icon">
-          <Layout className="h-6 w-6 dark:text-gray-300" />
-        </Button>
+
+        <Layouts />
         <Button variant="ghost" size="icon">
           <Type className="h-6 w-6 dark:text-gray-300" />
         </Button>
         <Button variant="ghost" size="icon">
           <Img className="h-6 w-6 dark:text-gray-300" />
         </Button>
-
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Component className="h-6 w-6 dark:text-gray-300" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Components</SheetTitle>
-              <SheetDescription>
-                Drag and drop components onto the canvas
-              </SheetDescription>
-            </SheetHeader>
-            
-          </SheetContent>
-        </Sheet>
+        <Components />
       </div>
     </section>
   );

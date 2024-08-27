@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useEditor } from "@/context/Editor";
-import LeftSideBar from "./editor/LeftSideBar";
-import Topbar from "./editor/Topbar";
+import LeftSideBar from "./LeftSideBar";
+import Topbar from "./Topbar";
 import { devicePresets } from "@/constants";
 
 const WebsiteBuilder = () => {
@@ -28,8 +28,6 @@ const WebsiteBuilder = () => {
     return () => document.removeEventListener("resize", handleResize);
   }, [currentDevice, customSize, autoZoom]);
 
- 
-
   const calculateZoom = () => {
     if (!containerRef.current) return 1;
     const containerWidth = containerRef.current.offsetWidth;
@@ -40,8 +38,6 @@ const WebsiteBuilder = () => {
     const heightRatio = containerHeight / deviceSize.height;
     return Math.min(widthRatio, heightRatio, 1) * 0.9;
   };
-
- 
 
   const handleWheel = (e: any) => {
     if (e.ctrlKey) {
@@ -88,7 +84,6 @@ const WebsiteBuilder = () => {
                     ? `${customSize.height}px`
                     : `${devicePresets[currentDevice].height}px`,
               }}
-            
             ></div>
           </div>
         </div>
