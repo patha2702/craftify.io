@@ -16,11 +16,12 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEditor } from "@/context/Editor";
+import Theme from "@/components/Theme";
 
 const Topbar = () => {
   const { currentDevice, setCurrentDevice, zoom, setZoom } = useEditor();
   return (
-    <section className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-2 flex justify-between items-center">
+    <section className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-2 px-4 flex justify-between items-center">
       <div className="flex items-center space-x-2">
         <Button variant="ghost" size="icon">
           <Undo className="h-4 w-4" />
@@ -84,15 +85,7 @@ const Topbar = () => {
         <Button variant="ghost" size="icon" onClick={() => setZoom(zoom * 0.9)}>
           <ZoomOut className="h-4 w-4" />
         </Button>
-        <div className="flex items-center space-x-2">
-          <Sun className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
-          <Switch
-            checked={true}
-            onCheckedChange={()=>{}}
-            className="bg-gray-300 dark:bg-gray-600"
-          />
-          <Moon className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
-        </div>
+        <Theme />
       </div>
     </section>
   );

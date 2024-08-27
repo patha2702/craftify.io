@@ -7,7 +7,6 @@ import { devicePresets } from "@/constants";
 
 const WebsiteBuilder = () => {
   const { currentDevice, setCurrentDevice, zoom, setZoom } = useEditor();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [autoZoom, setAutoZoom] = useState(true);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [customSize, setCustomSize] = useState({ width: 1920, height: 1080 });
@@ -58,7 +57,7 @@ const WebsiteBuilder = () => {
   };
 
   return (
-    <div className={`flex h-screen ${isDarkMode ? "dark" : ""}`}>
+    <div className={`flex h-screen`}>
       <LeftSideBar />
       <div className="flex-1 flex flex-col bg-gray-100 dark:bg-gray-900">
         <Topbar />
